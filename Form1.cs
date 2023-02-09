@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace TheGameOfLIFE
 {
     public partial class Form1 : Form
@@ -32,21 +33,8 @@ namespace TheGameOfLIFE
 
             calculationAutomata = new CalculationAutomata(/*rows*/ fieldForDrawing.Height / resolution, /*cols*/fieldForDrawing.Width / resolution, (int)nudDensity.Value);
 
-            //rows = fieldForDrawing.Height / resolution;
-            //cols = fieldForDrawing.Width / resolution;
-
             Text = $"Generation: {calculationAutomata.CurrentGeneration}";
 
-            //field = new bool[cols, rows];
-
-            //Random random = new Random();
-            //for (int x = 0; x < cols; x++)
-            //{
-            //    for (int y = 0; y < rows; y++)
-            //    {
-            //        field[x, y] = random.Next((int)nudDensity.Value) == 0;
-            //    }
-            //}
 
             fieldForDrawing.Image = new Bitmap(fieldForDrawing.Width, fieldForDrawing.Height);
             graphics = Graphics.FromImage(fieldForDrawing.Image);
@@ -72,34 +60,6 @@ namespace TheGameOfLIFE
             fieldForDrawing.Refresh();
             Text = $"Generation: {calculationAutomata.CurrentGeneration}";
             calculationAutomata.CalculateGeneration();
-            //    var newField = new bool[cols, rows];
-
-            //    for (int x = 0; x < cols; x++)
-            //    {
-            //        for (int y = 0; y < rows; y++)
-            //        {
-            //            var neighboursCount = CountNeighbours(x, y);
-            //            var hasLife = field[x, y];
-            //            if (!hasLife && neighboursCount == 3)
-            //            {
-            //                newField[x, y] = true;
-            //            }
-            //            else if (hasLife && (neighboursCount < 2 || neighboursCount > 3))
-            //            {
-            //                newField[x, y] = false;
-            //            }
-            //            else
-            //            {
-            //                newField[x, y] = field[x, y];
-            //            }
-            //            if (hasLife)
-            //            {
-            //                graphics.FillEllipse(Brushes.Aquamarine, x * resolution, y * resolution, resolution, resolution);
-            //            }
-            //        }
-            //    }
-            //    field = newField;
-
         }
         private void StopGame()
         {

@@ -1,0 +1,10 @@
+C:\Users\Анна\source\repos\TheGameOfLIFE\bin\Debug\TheGameOfLIFE.exe.config
+C:\Users\Анна\source\repos\TheGameOfLIFE\bin\Debug\TheGameOfLIFE.exe
+C:\Users\Анна\source\repos\TheGameOfLIFE\bin\Debug\TheGameOfLIFE.pdb
+C:\Users\Анна\source\repos\TheGameOfLIFE\obj\Debug\TheGameOfLIFE.csproj.AssemblyReference.cache
+C:\Users\Анна\source\repos\TheGameOfLIFE\obj\Debug\TheGameOfLIFE.Form1.resources
+C:\Users\Анна\source\repos\TheGameOfLIFE\obj\Debug\TheGameOfLIFE.Properties.Resources.resources
+C:\Users\Анна\source\repos\TheGameOfLIFE\obj\Debug\TheGameOfLIFE.csproj.GenerateResource.cache
+C:\Users\Анна\source\repos\TheGameOfLIFE\obj\Debug\TheGameOfLIFE.csproj.CoreCompileInputs.cache
+C:\Users\Анна\source\repos\TheGameOfLIFE\obj\Debug\TheGameOfLIFE.exe
+C:\Users\Анна\source\repos\TheGameOfLIFE\obj\Debug\TheGameOfLIFE.pdb

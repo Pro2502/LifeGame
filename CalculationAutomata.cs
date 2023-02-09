@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace TheGameOfLIFE
 {
@@ -31,25 +32,44 @@ namespace TheGameOfLIFE
         {
             var newField = new bool[_cols, _rows];
 
-            for (int x = 0; x < _cols; x++)
+            using (StreamWriter sw = new StreamWriter(@"C: \Users\Анна\source\repos\TheGameOfLIFE\contdition.txt"))
             {
-                for (int y = 0; y < _rows; y++)
+                for (int x = 0; x < _cols; x++)
                 {
-                    var neighboursCount = CountNeighbours(x, y);
-                    var hasLife = _field[x, y];
-                    if (!hasLife && neighboursCount == 3)
+                    for (int y = 0; y < _rows; y++)
                     {
-                        newField[x, y] = true;
-                    }
-                    else if (hasLife && (neighboursCount < 2 || neighboursCount > 3))
+                        var neighboursCount = CountNeighbours(x, y);
+                        var hasLife = _field[x, y];
+                        if (!hasLife && neighboursCount == 3)
+                        {
+                            newField[x, y] = true;
+                            
+                        }
+                        else if (hasLife && (neighboursCount < 2 || neighboursCount > 3))
+                        {
+                            newField[x, y] = false;
+                            
+                        }
+                        else
+                        {
+                            newField[x, y] = _field[x, y];
+                        }
+                    sw.WriteLine(String.Format("{0}|{1}|{2}|", x, y, newField[x, y]));
+                }
+            }
+            sw.Close();
+            if (File.Exists(@"C: \Users\Анна\source\repos\TheGameOfLIFE\contdition.txt"))
+                {
+                    StreamReader  sr = File.OpenText(@"C: \Users\Анна\source\repos\TheGameOfLIFE\contdition.txt");
+                    while (!sr.EndOfStream)
                     {
-                        newField[x, y] = false;
+                        string data_string = sr.ReadLine();
+                        string[] fields = data_string.Split('|');
+                        int x = Convert.ToInt32(fields[0]);
+                        int y = Convert.ToInt32(fields[1]);
+                        _field[x, y] = Convert.ToBoolean(fields[2]);
                     }
-                    else
-                    {
-                        newField[x, y] = _field[x, y];
-                    }
-
+                    sr.Close();
                 }
             }
             _field = newField;
